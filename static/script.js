@@ -56,3 +56,4 @@ async function deleteNote() {
 }
 
 window.onload = fetchNotes;
+

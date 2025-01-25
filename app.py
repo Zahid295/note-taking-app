@@ -1,9 +1,9 @@
 # app.py
 
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 from flask_restful import Resource, Api
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 api = Api(app)
 
 notes = []
@@ -34,5 +34,13 @@ class NoteDetail(Resource):
 api.add_resource(NoteList, '/notes')
 api.add_resource(NoteDetail, '/notes/<int:note_id>')
 
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/<path:path>')
+def static_files(path):
+    return send_from_directory(app.static_folder, path) 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
