@@ -4,4 +4,4 @@ pylint
 pytest
 click
 black
-pytest.co
+pytest.cov

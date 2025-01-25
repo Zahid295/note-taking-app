@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note-Taking App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Note-Taking App</h1>
+        <div class="form">
+            <input type="text" id="note-input" placeholder="Enter your note here...">
+            <button onclick="addNote()">Add Note</button>
+        </div>
+        <div class="form">
+            <button onclick="fetchNotes()">List All Notes</button>
+        </div>
+        <ul id="notes-list"></ul>
+        <div class="form">
+            <input type="number" id="note-id-input" placeholder="Enter note ID">
+            <button onclick="getNote()">Get Note by ID</button>
+            <button onclick="deleteNote()">Delete Note by ID</button>
+        </div>
+        <div id="note-detail"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
